@@ -35,7 +35,7 @@ def EliminacionCi(Ci,listaempleados):
 
 def EliminacionNombre(Nombre,listaempleados):
     for i in range(len(listaempleados)):
-        if Nombre==listaempleados[i].getnombre():
+        if Nombre==listaempleados[i].getNombre():
             del listaempleados[i]        
 def EliminacionPrincipal(listaempleados):
     ListarEmpleados(listaempleados)
