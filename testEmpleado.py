@@ -83,8 +83,8 @@ def ModificarEmpleado(listaempleado):
             direccion=input()
             ci=input()
             fecha=input()
-        if nombre!=None:
-            i.setNombre(nombre)
+            if nombre!=None:
+                i.setNombre(nombre)
             if apellido!=None:
                 i.setApellido(apellido)
             if direccion!=None:

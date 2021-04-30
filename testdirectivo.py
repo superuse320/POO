@@ -1,4 +1,4 @@
-from Empleado import Empleado
+
 from Directivo import Directivo
 import os
 def menu():
@@ -14,7 +14,7 @@ def menu():
     print("\t④ Actualiza Directivo")
     print("\t⓪. Salir ")
 
-def Registrar(listaEmpleados):
+def Registrar(listaDirectivo):
     #os.system("cls")
 
     nombre=input("Nombre: ")
@@ -95,8 +95,8 @@ def ModificarEmpleado(listadirectivo):
             ctitulo=input("Titilo : ")
             nivel=input("Nivel: ")
             salario=input("Salario: ")
-        if nombre!=None:
-            i.setNombre(nombre)
+            if nombre!=None:
+                i.setNombre(nombre)
             if apellido!=None:
                 i.setApellido(apellido)
             if direccion!=None:
