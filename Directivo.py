@@ -3,11 +3,13 @@ class Directivo(Empleado):
     def __init__(self,nombre,apellido,direccion,ci,fecha,cTitulo,nivel,salario):
         self.__cTitulo=cTitulo
         self.__nivel=nivel
-        self.__salario=salario    
+        self.__salario=salario
+        
+    
+      
         super().__init__(nombre,apellido,direccion,ci,fecha)
     def __str__(self):
-        
-        return "Nombre:"+self.__nombre+"\nApellido "+self.__apellido+"\nDireccion "+self.direccion__+"\nCi "+self.__ci +"\nFecha"+self.__fecha+"\nTitulo"+self.cTitulo+"\nNivel"+self.nivel+"\nSalario"+self.salario      
+        return "Tituldo"+self.__cTitulo+"\nNivel"+self.__nivel+"\nSalario"+self.__salario      
     def setTitulo(self,cTitulo):
         self.__cTitulo=cTitulo
     def setnivel(self,nivel):

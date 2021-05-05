@@ -62,11 +62,12 @@ def ListarEmpleados(listaEmpleados):
         print("============================")
         print("Cliente # ",(i+1))
         
-        print("Nombre= ",listaEmpleados[i].getNombre())
-        print("Apellido= ",listaEmpleados[i].getApellido())
-        print("Direccion=",listaEmpleados[i].getDireccion())
-        print("Ci= ",listaEmpleados[i].getCi())
-        print("Fecha de Registro=",listaEmpleados[i].getFecha())
+        #print("Nombre= ",listaEmpleados[i].getNombre())
+        #print("Apellido= ",listaEmpleados[i].getApellido())
+        #print("Direccion=",listaEmpleados[i].getDireccion())
+        #print("Ci= ",listaEmpleados[i].getCi())
+        #print("Fecha de Registro=",listaEmpleados[i].getFecha())
+        print(listaEmpleados[i])
         print("============================")
            
     input()

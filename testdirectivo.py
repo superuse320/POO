@@ -1,8 +1,9 @@
 
 from Directivo import Directivo
 import os
+import time
 def menu():
-                                                                                                                        
+    time.sleep(0.5)                                                                                                                    
     os.system("cls")
    
     print("\t.......................")
@@ -16,15 +17,22 @@ def menu():
 
 def Registrar(listaDirectivo):
     #os.system("cls")
-
     nombre=input("Nombre: ")
     apellido=input("Apellido")
     direccion=input("Direccion:")
-    ci=input("Ci:")
+    try:
+        ci=int (input("Ci:"))
+    except ValueError:
+        return "El dato es erroneo"
+        
+    
     fecha=input("Fecha: ")
     ctitulo=input("Titilo : ")
     nivel=input("Nivel: ")
-    salario=input("Salario: ")
+    try:
+        salario=float(input("Salario: "))
+    except ValueError:
+        return "Dato erroneo"
 
     directivo=Directivo(nombre,apellido,direccion,ci,fecha,ctitulo,nivel,salario)
     listaDirectivo.append(directivo)
@@ -75,7 +83,8 @@ def ListarDirectivos(listaDirectivo):
         print("Nivel= ",listaDirectivo[i].getnivel())
         print("Salario= ",listaDirectivo[i].getsalario())
         print("Fecha de Registro=",listaDirectivo[i].getFecha())
-        print
+        
+        #print(listaDirectivo[i])
         print("============================")
            
     input()
@@ -90,11 +99,17 @@ def ModificarEmpleado(listadirectivo):
             nombre=input("Nombre: ")
             apellido=input("Apellido: ")
             direccion=input("Direccion: ")
-            ci=input("Ci:" )
+            try:
+                ci=int (input("Ci:"))
+            except ValueError:
+                print("El dato es erroneo")
             fecha=input("Fecha: ")
             ctitulo=input("Titilo : ")
             nivel=input("Nivel: ")
-            salario=input("Salario: ")
+            try:
+                salario=float(input("Salario: "))
+            except ValueError:
+                return "Dato erroneo"
             if nombre!=None:
                 i.setNombre(nombre)
             if apellido!=None:
@@ -121,12 +136,15 @@ def ModificarEmpleado(listadirectivo):
 
     
 
-opcion=1
+opcion=12
 listaDirectivo=[]
 
 while opcion!=0:
     menu()
-    opcion=int(input("\t >> "))
+    try:
+        opcion=int(input("\t >> "))
+    except ValueError:
+        print("Dato incorrecto")    
     if opcion==1:
         os.system("cls")
         Registrar(listaDirectivo)
@@ -142,6 +160,7 @@ while opcion!=0:
         os.system("cls")
         print("Espere el sistema esta guardando datos")
     else:
-        print("No existe es opcion!!!")
+        print("Opcion no valida")    
+  
         
         

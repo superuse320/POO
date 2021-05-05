@@ -1,10 +1,11 @@
 from Tecnico import Tecnico
 import os
-opcion=1
+import time
+opcion=12
 listaTecnico=[]
 
 def menu():
-                                                                                                                        
+    time.sleep(0.5)                                                                                                                    
     os.system("cls")
    
     print("\t.......................")
@@ -22,11 +23,17 @@ def Registrar(listaTecnico):
     nombre=input("Nombre: ")
     apellido=input("Apellido")
     direccion=input("Direccion:")
-    ci=input("Ci:")
+    try:
+        ci=int (input("Ci:"))
+    except ValueError:
+        return "El dato es erroneo"
     fecha=input("Fecha: ")
     educacion=input("Titilo : ")
     experiencia=input("Nivel: ")
-    salario=input("Salario: ")
+    try:
+        salario=float(input("Salario: "))
+    except ValueError:
+        return "Dato erroneo"
     TituloTecnico=input("Titulo Tecnico: ")
 
     tecnico=Tecnico(nombre,apellido,direccion,ci,fecha,educacion,experiencia,salario,TituloTecnico)
@@ -88,11 +95,17 @@ def ModificarTecnico(listatecnico):
             nombre=input("Nombre: ")
             apellido=input("Apellido")
             direccion=input("Direccion:")
-            ci=input("Ci:")
+            try:
+                ci=int (input("Ci:"))
+            except ValueError:
+                return "El dato es erroneo"
             fecha=input("Fecha: ")
             educacion=input("Titilo : ")
             experiencia=input("Nivel: ")
-            salario=input("Salario: ")
+            try:
+                salario=float(input("Salario: "))
+            except ValueError:
+                return "Dato erroneo"
             tiTecnico=input("Titulo Tecnico")
             if nombre!=None:
                 i.setNombre(nombre)
@@ -124,7 +137,10 @@ def ModificarTecnico(listatecnico):
 
 while opcion!=0:
     menu()
-    opcion=int(input("\t >> "))
+    try:
+        opcion=int(input("\t >> "))
+    except ValueError:
+        print("Dato erroneo")
     if opcion==1:
         os.system("cls")
         Registrar(listaTecnico)

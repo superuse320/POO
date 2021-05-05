@@ -1,10 +1,11 @@
 from Oficial import Oficial
 import os
-opcion=1
+import time
+opcion=12
 listaOficial=[]
 
 def menu():
-                                                                                                                        
+    time.sleep(0.5)                                                                                                                    
     os.system("cls")
    
     print("\t.......................")
@@ -22,11 +23,19 @@ def Registrar(listaOficial):
     nombre=input("Nombre: ")
     apellido=input("Apellido")
     direccion=input("Direccion:")
-    ci=input("Ci:")
+   
+    try:
+        ci=int(input("Ci:"))
+    except ValueError:
+        return "Dato erroneo"
+
     fecha=input("Fecha: ")
     educacion=input("Nivel de Educacion : ")
     experiencia=input("Nivel: ")
-    salario=input("Salario: ")
+    try:
+        salario=float(input("Salario: "))
+    except ValueError:
+        return "Dato erroneo"
     cargo=input("Cargo")
 
     oficial=Oficial(nombre,apellido,direccion,ci,fecha,educacion,experiencia,salario,cargo)
@@ -88,11 +97,17 @@ def ModificarOficial(listaoficial):
             nombre=input("Nombre: ")
             apellido=input("Apellido")
             direccion=input("Direccion:")
-            ci=input("Ci:")
+            try:
+                ci=int(input("Ci:"))
+            except ValueError:
+                return "Dato erroneo"
             fecha=input("Fecha: ")
             educacion=input("Nivel de educacion : ")
             experiencia=input("Experiencia: ")
-            salario=input("Salario: ")
+            try:
+                salario=float(input("Salario: "))
+            except ValueError:
+                return "Dato erroneo"
             cargo=input("Cargo")
             if nombre!=None:
                 i.setNombre(nombre)
@@ -124,7 +139,10 @@ def ModificarOficial(listaoficial):
 
 while opcion!=0:
     menu()
-    opcion=int(input("\t >> "))
+    try:
+        opcion=int(input("\t >> "))
+    except ValueError:
+        print("Dato erroneo")    
     if opcion==1:
         os.system("cls")
         Registrar(listaOficial)

@@ -8,7 +8,7 @@ class Empleado:
         self.__fecha=fecha
     def __str__(self):
         
-        return "Nombre:"+self.__nombre+"\nApellido "+self.__apellido+"\nDireccion "+self.direccion__+"\nCi "+self.__ci +"\nFecha"+self.__fecha
+        return "Nombre:"+self.__nombre+"\nApellido "+self.__apellido+"\nDireccion "+self.__direccion+"\nCi "+self.__ci +"\nFecha"+self.__fecha
         
     def getNombre(self):
         return self.__nombre
